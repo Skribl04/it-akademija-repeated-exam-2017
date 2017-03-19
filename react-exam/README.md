@@ -36,8 +36,8 @@ Sukurkite oro uosto skrydžių sąrašo puslapį.
 
 ##### Skrydžio trynimas (10 taškų)
 
-- Paspaudus ant skrydžio ID tas skrydis turi būti pažymimas "trinimui" (penki taškai)
-- Trinamas skrydis - visa skrydžio eilutė nuspalvinama raudonai (trys taškai)
-- Apačioje sąrašo yra mygtukas "Trinti" (du taškai)
+- Paspaudus ant skrydžio ID tas skrydis turi būti pažymimas "trynimui" (5 taškai)
+- Trinamas skrydis - visa skrydžio eilutė nuspalvinama raudonai (3 taškai)
+- Apačioje sąrašo yra mygtukas "Trinti" (2 taškai)
   - Paspaudus trinti yra ištrinami visi pažymėti skrydžiai naudojant `DELETE /api/flights/{id}`
   - Po paspaudimo ištrinti skrydžiai turi dingti iš sąrašo
