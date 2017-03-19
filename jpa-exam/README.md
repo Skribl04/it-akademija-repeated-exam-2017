@@ -36,7 +36,6 @@ Sugalvokite dviejų tipų esybes.
   ir bent du su dalykine sritimi susijusius laukus.
   - Turi turėti OneToMany tipo sąryšį, kurio nuoroda grąžinama oneToMany()
   - Sąryšio savybės:
-  //(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     - Aktyviai užkraunamas
     - išsaugant arba trinant tėvinį objektą sąryšis turi būti taip pat išsaugomas arba ištrinamas
     - tėvinio objekto atnaujinimo operacijos neturi propoguotis sąryšiui
@@ -47,7 +46,7 @@ Sugalvokite dviejų tipų esybes.
     - getId, getString, setString metodus
     
 - Sugalvokite prasmingus dalykinės srities pavadinimus. 
-  Pvz getString turetų gražinti prasmingai pavadinto lauko reikšmė.
+  Pvz getString turetų grąžinti prasmingai pavadinto lauko reikšmę.
      
 - Užbaikite TestData.getNewEntity1() kuris turi grąžinti jūsų 
 modeliujamą esybę su duomenimis ir sąryšiais.       
