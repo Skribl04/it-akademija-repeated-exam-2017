@@ -6,6 +6,7 @@ import lt.itakademija.model.command.UpdateContact;
 import lt.itakademija.model.query.Contact;
 import lt.itakademija.model.query.Message;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -13,6 +14,8 @@ import java.util.*;
 /**
  * Created by mariusg on 2017.03.19.
  */
+
+@Repository
 public class InMemoryMessengerRepository implements MessengerRepository {
 
     private final List<Contact> contacts = new LinkedList<>();

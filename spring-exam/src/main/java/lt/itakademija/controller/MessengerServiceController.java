@@ -10,45 +10,58 @@ import lt.itakademija.repository.MessengerRepository;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  * Created by mariusg on 2017.03.19.
  */
+@RestController
+@RequestMapping (value = "/webapi/messenger")
 public class MessengerServiceController {
 
     private final MessengerRepository repository;
-
+    
+    @Autowired
     public MessengerServiceController(MessengerRepository repository) {
         this.repository = repository;
     }
-
+    
+    @PostMapping (value= "/contacts")
     public Id createContact(CreateContact createContact) {
-        throw new UnsupportedOperationException("not implemented");
+    	return new Id(repository.createContact(createContact));
     }
-
+    @GetMapping (value= "/contacts")
     public List<Contact> getContacts() {
-        throw new UnsupportedOperationException("not implemented");
+        return repository.getContacts();
     }
-
-    public Contact getContact(Long contactId) {
-        throw new UnsupportedOperationException("not implemented");
+    @GetMapping (value= "/contacts/{contactId}")
+    public Contact getContact(@PathVariable ("contactId")Long contactId) {
+        return repository.getContact(contactId);
     }
-
-    public void updateContact(Long contactId,
+    @PostMapping (value= "/contacts/{contactId}")
+    public void updateContact(@PathVariable Long contactId,
                               UpdateContact updateContact) {
-        throw new UnsupportedOperationException("not implemented");
+    	repository.updateContact(contactId, updateContact);
     }
-
-    public void deleteContact(Long contactId) {
-        throw new UnsupportedOperationException("not implemented");
+    @DeleteMapping (value= "/contacts/{contactId}")
+    public void deleteContact(@PathVariable ("contactId") Long contactId) {
+        repository.deleteContact(contactId);
     }
-
-    public Id createMessage(Long contactId,
+    @PostMapping (value= "/messages/{contactId}")
+    public Id createMessage(@PathVariable Long contactId,
                             CreateMessage createMessage) {
-        throw new UnsupportedOperationException("not implemented");
+        return new Id(repository.createMessage(contactId, createMessage));
     }
-
-    public List<Message> getMessages(Long contactId) {
-        throw new UnsupportedOperationException("not implemented");
+    @GetMapping (value= "/messages/{contactId}")
+    public List<Message> getMessages(@PathVariable Long contactId) {
+        return repository.getMessages(contactId);
     }
 
 }

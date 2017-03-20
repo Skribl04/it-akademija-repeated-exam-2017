@@ -6,7 +6,7 @@ package lt.itakademija.model;
 public final class Id {
 
     private final Long id;
-
+    
     public Id(Long id) {
         this.id = id;
     }
